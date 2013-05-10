@@ -16,6 +16,10 @@ CCByteArray* CCByteArray::create(char* buffer, int len) {
 
 	return ba;
 }
+
+void CCByteArray::destroy(CCByteArray* ba) {
+	delete ba;
+}
 //0: big 1:little
 int CCByteArray::checkCPUEndian() {
 	union w      

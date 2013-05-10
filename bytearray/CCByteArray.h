@@ -15,6 +15,9 @@ class CCByteArray
 {
 public:
      static CCByteArray* create(char *buf, int len);
+
+	 static void destroy(CCByteArray* ba) ;
+
 	 static int checkCPUEndian();
 
 

@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCByteArray
-** Generated automatically by tolua++-1.0.92 on 05/10/13 07:26:03.
+** Generated automatically by tolua++-1.0.92 on 05/10/13 12:45:39.
 */
 
 #ifndef __cplusplus
@@ -54,6 +54,35 @@ static int tolua_CCByteArray_CCByteArray_create00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: destroy of class  CCByteArray */
+#ifndef TOLUA_DISABLE_tolua_CCByteArray_CCByteArray_destroy00
+static int tolua_CCByteArray_CCByteArray_destroy00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"CCByteArray",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCByteArray",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCByteArray* ba = ((CCByteArray*)  tolua_tousertype(tolua_S,2,0));
+  {
+   CCByteArray::destroy(ba);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'destroy'.",&tolua_err);
  return 0;
 #endif
 }
@@ -456,6 +485,7 @@ TOLUA_API int tolua_CCByteArray_open (lua_State* tolua_S)
   tolua_cclass(tolua_S,"CCByteArray","CCByteArray","",NULL);
   tolua_beginmodule(tolua_S,"CCByteArray");
    tolua_function(tolua_S,"create",tolua_CCByteArray_CCByteArray_create00);
+   tolua_function(tolua_S,"destroy",tolua_CCByteArray_CCByteArray_destroy00);
    tolua_function(tolua_S,"readShort",tolua_CCByteArray_CCByteArray_readShort00);
    tolua_function(tolua_S,"readInt",tolua_CCByteArray_CCByteArray_readInt00);
    tolua_function(tolua_S,"readUnsignedInt",tolua_CCByteArray_CCByteArray_readUnsignedInt00);
