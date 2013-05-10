@@ -15,3 +15,5 @@ ba:setPosition(0)
 echo("pos:" .. ba:getPosition())
 echo(ba:readByte())
 echo(ba:readUnsignedByte())
+
+CCByteArray:destroy(ba)
