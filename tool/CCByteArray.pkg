@@ -1,0 +1,30 @@
+$#include "bytearray\CCByteArray.h"
+$#include <string>
+
+$using namespace std;
+
+class CCByteArray
+{
+
+     static CCByteArray* create(char *buf, int len);
+
+	
+	 int readShort();
+	 int readInt();
+	 unsigned int readUnsignedInt();
+	 int readUnsignedShort();
+	 string readString(int len);
+	 int readByte();
+	 int readUnsignedByte();
+	 string getBuffer();
+	 int getLength();	 
+	 int getCPUEndian();
+
+	 int getPosition();
+	 void setPosition(int pos);
+};
+
+
+
+#endif 
+
