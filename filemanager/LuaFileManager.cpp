@@ -1,6 +1,6 @@
 /*
 ** Lua binding: FileManager
-** Generated automatically by tolua++-1.0.92 on 05/11/13 20:31:39.
+** Generated automatically by tolua++-1.0.92 on 05/11/13 20:50:52.
 */
 
 #ifndef __cplusplus
@@ -13,6 +13,7 @@
 /* Exported function */
 TOLUA_API int  tolua_FileManager_open (lua_State* tolua_S);
 
+#include "filemanager\FileManager.h"
 using namespace std;
 using namespace cocos2d;
 using namespace cocos2d::extra;
