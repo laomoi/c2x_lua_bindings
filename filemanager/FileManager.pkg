@@ -1,41 +1,23 @@
-$#include "filemanager\FileManager.h"
+$#include "fileManager/FileManager.h"
+
 $using namespace std;
-$using namespace cocos2d;
-$using namespace cocos2d::extra;
-
-typedef enum {
-    CCStoreReceiptVerifyModeNone = 0,
-    CCStoreReceiptVerifyModeDevice = 1,
-    CCStoreReceiptVerifyModeServer
-} CCStoreReceiptVerifyMode;
 
 
-#define CCStoreReceiptVerifyStatusUnknownError -5
-#define CCStoreReceiptVerifyStatusInvalidReceipt -4
-#define CCStoreReceiptVerifyStatusRequestFailed -3
-#define CCStoreReceiptVerifyStatusInvalidResult -2
-#define CCStoreReceiptVerifyStatusNone -1
-#define CCStoreReceiptVerifyStatusOK 0
+class FileManager {
 
-class CCStore
-{
-public:
-    static CCStore* sharedStore(void);
-    static void purgeSharedStore(void);
+    static const char* splicePath(const std::string& parentPath,const std::string& childPath);
+ 
+    static bool fileExists(const std::string& filePath);
+    
+    static bool renameFile(const std::string& oldFilePath, const std::string& newFilePath);
 
-    void postInitWithTransactionListenerLua(LUA_FUNCTION listener);
+    static bool writeStringToFile(const std::string& content,const std::string& filePath,bool isAppend = false);
+    
+    static bool removeFile(const std::string& filePath);
 
-    bool canMakePurchases(void);
+    static bool createDirectory(const std::string& directoryPath);
+    
+    static bool uncompressZipFile(const std::string& zipFile,const std::string& directory);
 
-    void loadProductsLua(LUA_TABLE __LUA_TABLE__, LUA_FUNCTION callback);
-    void cancelLoadProducts(void);
-    bool isProductLoaded(const char* productId);
-
-    bool purchase(const char* productId);
-    void finishTransactionLua(const char* transactionIdentifier);
-
-    CCStoreReceiptVerifyMode getReceiptVerifyMode(void);
-    void setReceiptVerifyMode(CCStoreReceiptVerifyMode mode, bool isSandbox = true);
-    const char* getReceiptVerifyServerUrl(void);
-    void setReceiptVerifyServerUrl(const char* url);
 };
+

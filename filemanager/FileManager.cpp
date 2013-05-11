@@ -1,10 +1,10 @@
-//
 //  Thanks to @hs contributing this code
 //  FileManager.cpp
 //  Framework-x
 //
 //  Created by wp_g4 on 13-4-23.
 //
+// note: can not compile on win32
 //
 
 //#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
@@ -15,7 +15,7 @@
 
 #include "support/zip_support/unzip.h"
 
-#include "FileManager.h"
+#include "filemanager/FileManager.h"
 
 using namespace std;
 using namespace cocos2d;

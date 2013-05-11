@@ -1,6 +1,6 @@
 /*
 ** Lua binding: FileManager
-** Generated automatically by tolua++-1.0.92 on 05/11/13 20:50:52.
+** Generated automatically by tolua++-1.0.92 on 05/11/13 21:01:55.
 */
 
 #ifndef __cplusplus
@@ -13,10 +13,8 @@
 /* Exported function */
 TOLUA_API int  tolua_FileManager_open (lua_State* tolua_S);
 
-#include "filemanager\FileManager.h"
+#include "fileManager/FileManager.h"
 using namespace std;
-using namespace cocos2d;
-using namespace cocos2d::extra;
 
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
@@ -24,428 +22,236 @@ static void tolua_reg_types (lua_State* tolua_S)
 #ifndef Mtolua_typeid
 #define Mtolua_typeid(L,TI,T)
 #endif
- tolua_usertype(tolua_S,"LUA_FUNCTION");
- Mtolua_typeid(tolua_S,typeid(LUA_FUNCTION), "LUA_FUNCTION");
- tolua_usertype(tolua_S,"LUA_TABLE");
- Mtolua_typeid(tolua_S,typeid(LUA_TABLE), "LUA_TABLE");
- tolua_usertype(tolua_S,"CCStore");
- Mtolua_typeid(tolua_S,typeid(CCStore), "CCStore");
+ tolua_usertype(tolua_S,"FileManager");
+ Mtolua_typeid(tolua_S,typeid(FileManager), "FileManager");
 }
 
-/* method: sharedStore of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_sharedStore00
-static int tolua_FileManager_CCStore_sharedStore00(lua_State* tolua_S)
+/* method: splicePath of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_splicePath00
+static int tolua_FileManager_FileManager_splicePath00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertable(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   CCStore* tolua_ret = (CCStore*)  CCStore::sharedStore();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCStore");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'sharedStore'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: purgeSharedStore of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_purgeSharedStore00
-static int tolua_FileManager_CCStore_purgeSharedStore00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   CCStore::purgeSharedStore();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'purgeSharedStore'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: postInitWithTransactionListenerLua of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_postInitWithTransactionListenerLua00
-static int tolua_FileManager_CCStore_postInitWithTransactionListenerLua00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"LUA_FUNCTION",0,&tolua_err)) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  LUA_FUNCTION listener = *((LUA_FUNCTION*)  tolua_tousertype(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'postInitWithTransactionListenerLua'", NULL);
-#endif
-  {
-   self->postInitWithTransactionListenerLua(listener);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'postInitWithTransactionListenerLua'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: canMakePurchases of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_canMakePurchases00
-static int tolua_FileManager_CCStore_canMakePurchases00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'canMakePurchases'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->canMakePurchases();
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'canMakePurchases'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: loadProductsLua of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_loadProductsLua00
-static int tolua_FileManager_CCStore_loadProductsLua00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"LUA_TABLE",0,&tolua_err)) ||
-     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"LUA_FUNCTION",0,&tolua_err)) ||
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,4,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  LUA_TABLE __LUA_TABLE__ = *((LUA_TABLE*)  tolua_tousertype(tolua_S,2,0));
-  LUA_FUNCTION callback = *((LUA_FUNCTION*)  tolua_tousertype(tolua_S,3,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'loadProductsLua'", NULL);
-#endif
+  const std::string parentPath = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  const std::string childPath = ((const std::string)  tolua_tocppstring(tolua_S,3,0));
   {
-   self->loadProductsLua(__LUA_TABLE__,callback);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'loadProductsLua'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: cancelLoadProducts of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_cancelLoadProducts00
-static int tolua_FileManager_CCStore_cancelLoadProducts00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'cancelLoadProducts'", NULL);
-#endif
-  {
-   self->cancelLoadProducts();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'cancelLoadProducts'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: isProductLoaded of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_isProductLoaded00
-static int tolua_FileManager_CCStore_isProductLoaded00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  const char* productId = ((const char*)  tolua_tostring(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isProductLoaded'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->isProductLoaded(productId);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'isProductLoaded'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: purchase of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_purchase00
-static int tolua_FileManager_CCStore_purchase00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  const char* productId = ((const char*)  tolua_tostring(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'purchase'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->purchase(productId);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'purchase'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: finishTransactionLua of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_finishTransactionLua00
-static int tolua_FileManager_CCStore_finishTransactionLua00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  const char* transactionIdentifier = ((const char*)  tolua_tostring(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'finishTransactionLua'", NULL);
-#endif
-  {
-   self->finishTransactionLua(transactionIdentifier);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'finishTransactionLua'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: getReceiptVerifyMode of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_getReceiptVerifyMode00
-static int tolua_FileManager_CCStore_getReceiptVerifyMode00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getReceiptVerifyMode'", NULL);
-#endif
-  {
-   CCStoreReceiptVerifyMode tolua_ret = (CCStoreReceiptVerifyMode)  self->getReceiptVerifyMode();
-   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getReceiptVerifyMode'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setReceiptVerifyMode of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_setReceiptVerifyMode00
-static int tolua_FileManager_CCStore_setReceiptVerifyMode00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isboolean(tolua_S,3,1,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,4,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  CCStoreReceiptVerifyMode mode = ((CCStoreReceiptVerifyMode) (int)  tolua_tonumber(tolua_S,2,0));
-  bool isSandbox = ((bool)  tolua_toboolean(tolua_S,3,true));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setReceiptVerifyMode'", NULL);
-#endif
-  {
-   self->setReceiptVerifyMode(mode,isSandbox);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setReceiptVerifyMode'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: getReceiptVerifyServerUrl of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_getReceiptVerifyServerUrl00
-static int tolua_FileManager_CCStore_getReceiptVerifyServerUrl00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getReceiptVerifyServerUrl'", NULL);
-#endif
-  {
-   const char* tolua_ret = (const char*)  self->getReceiptVerifyServerUrl();
+   const char* tolua_ret = (const char*)  FileManager::splicePath(parentPath,childPath);
    tolua_pushstring(tolua_S,(const char*)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)parentPath);
+   tolua_pushcppstring(tolua_S,(const char*)childPath);
   }
  }
- return 1;
+ return 3;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getReceiptVerifyServerUrl'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'splicePath'.",&tolua_err);
  return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: setReceiptVerifyServerUrl of class  CCStore */
-#ifndef TOLUA_DISABLE_tolua_FileManager_CCStore_setReceiptVerifyServerUrl00
-static int tolua_FileManager_CCStore_setReceiptVerifyServerUrl00(lua_State* tolua_S)
+/* method: fileExists of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_fileExists00
+static int tolua_FileManager_FileManager_fileExists00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertype(tolua_S,1,"CCStore",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  CCStore* self = (CCStore*)  tolua_tousertype(tolua_S,1,0);
-  const char* url = ((const char*)  tolua_tostring(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setReceiptVerifyServerUrl'", NULL);
-#endif
+  const std::string filePath = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
   {
-   self->setReceiptVerifyServerUrl(url);
+   bool tolua_ret = (bool)  FileManager::fileExists(filePath);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)filePath);
   }
  }
- return 0;
+ return 2;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setReceiptVerifyServerUrl'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'fileExists'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: renameFile of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_renameFile00
+static int tolua_FileManager_FileManager_renameFile00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const std::string oldFilePath = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  const std::string newFilePath = ((const std::string)  tolua_tocppstring(tolua_S,3,0));
+  {
+   bool tolua_ret = (bool)  FileManager::renameFile(oldFilePath,newFilePath);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)oldFilePath);
+   tolua_pushcppstring(tolua_S,(const char*)newFilePath);
+  }
+ }
+ return 3;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'renameFile'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writeStringToFile of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_writeStringToFile00
+static int tolua_FileManager_FileManager_writeStringToFile00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,4,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const std::string content = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  const std::string filePath = ((const std::string)  tolua_tocppstring(tolua_S,3,0));
+  bool isAppend = ((bool)  tolua_toboolean(tolua_S,4,false));
+  {
+   bool tolua_ret = (bool)  FileManager::writeStringToFile(content,filePath,isAppend);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)content);
+   tolua_pushcppstring(tolua_S,(const char*)filePath);
+  }
+ }
+ return 3;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writeStringToFile'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeFile of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_removeFile00
+static int tolua_FileManager_FileManager_removeFile00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const std::string filePath = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  {
+   bool tolua_ret = (bool)  FileManager::removeFile(filePath);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)filePath);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'removeFile'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createDirectory of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_createDirectory00
+static int tolua_FileManager_FileManager_createDirectory00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const std::string directoryPath = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  {
+   bool tolua_ret = (bool)  FileManager::createDirectory(directoryPath);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)directoryPath);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createDirectory'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: uncompressZipFile of class  FileManager */
+#ifndef TOLUA_DISABLE_tolua_FileManager_FileManager_uncompressZipFile00
+static int tolua_FileManager_FileManager_uncompressZipFile00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"FileManager",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const std::string zipFile = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+  const std::string directory = ((const std::string)  tolua_tocppstring(tolua_S,3,0));
+  {
+   bool tolua_ret = (bool)  FileManager::uncompressZipFile(zipFile,directory);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushcppstring(tolua_S,(const char*)zipFile);
+   tolua_pushcppstring(tolua_S,(const char*)directory);
+  }
+ }
+ return 3;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'uncompressZipFile'.",&tolua_err);
  return 0;
 #endif
 }
@@ -458,30 +264,15 @@ TOLUA_API int tolua_FileManager_open (lua_State* tolua_S)
  tolua_reg_types(tolua_S);
  tolua_module(tolua_S,NULL,0);
  tolua_beginmodule(tolua_S,NULL);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyModeNone",CCStoreReceiptVerifyModeNone);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyModeDevice",CCStoreReceiptVerifyModeDevice);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyModeServer",CCStoreReceiptVerifyModeServer);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusUnknownError",CCStoreReceiptVerifyStatusUnknownError);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusInvalidReceipt",CCStoreReceiptVerifyStatusInvalidReceipt);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusRequestFailed",CCStoreReceiptVerifyStatusRequestFailed);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusInvalidResult",CCStoreReceiptVerifyStatusInvalidResult);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusNone",CCStoreReceiptVerifyStatusNone);
-  tolua_constant(tolua_S,"CCStoreReceiptVerifyStatusOK",CCStoreReceiptVerifyStatusOK);
-  tolua_cclass(tolua_S,"CCStore","CCStore","",NULL);
-  tolua_beginmodule(tolua_S,"CCStore");
-   tolua_function(tolua_S,"sharedStore",tolua_FileManager_CCStore_sharedStore00);
-   tolua_function(tolua_S,"purgeSharedStore",tolua_FileManager_CCStore_purgeSharedStore00);
-   tolua_function(tolua_S,"postInitWithTransactionListenerLua",tolua_FileManager_CCStore_postInitWithTransactionListenerLua00);
-   tolua_function(tolua_S,"canMakePurchases",tolua_FileManager_CCStore_canMakePurchases00);
-   tolua_function(tolua_S,"loadProductsLua",tolua_FileManager_CCStore_loadProductsLua00);
-   tolua_function(tolua_S,"cancelLoadProducts",tolua_FileManager_CCStore_cancelLoadProducts00);
-   tolua_function(tolua_S,"isProductLoaded",tolua_FileManager_CCStore_isProductLoaded00);
-   tolua_function(tolua_S,"purchase",tolua_FileManager_CCStore_purchase00);
-   tolua_function(tolua_S,"finishTransactionLua",tolua_FileManager_CCStore_finishTransactionLua00);
-   tolua_function(tolua_S,"getReceiptVerifyMode",tolua_FileManager_CCStore_getReceiptVerifyMode00);
-   tolua_function(tolua_S,"setReceiptVerifyMode",tolua_FileManager_CCStore_setReceiptVerifyMode00);
-   tolua_function(tolua_S,"getReceiptVerifyServerUrl",tolua_FileManager_CCStore_getReceiptVerifyServerUrl00);
-   tolua_function(tolua_S,"setReceiptVerifyServerUrl",tolua_FileManager_CCStore_setReceiptVerifyServerUrl00);
+  tolua_cclass(tolua_S,"FileManager","FileManager","",NULL);
+  tolua_beginmodule(tolua_S,"FileManager");
+   tolua_function(tolua_S,"splicePath",tolua_FileManager_FileManager_splicePath00);
+   tolua_function(tolua_S,"fileExists",tolua_FileManager_FileManager_fileExists00);
+   tolua_function(tolua_S,"renameFile",tolua_FileManager_FileManager_renameFile00);
+   tolua_function(tolua_S,"writeStringToFile",tolua_FileManager_FileManager_writeStringToFile00);
+   tolua_function(tolua_S,"removeFile",tolua_FileManager_FileManager_removeFile00);
+   tolua_function(tolua_S,"createDirectory",tolua_FileManager_FileManager_createDirectory00);
+   tolua_function(tolua_S,"uncompressZipFile",tolua_FileManager_FileManager_uncompressZipFile00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

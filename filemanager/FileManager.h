@@ -1,4 +1,3 @@
-//
 //Thanks to @hs contributing this code
 //  FileManager.h
 //  Framework-x
