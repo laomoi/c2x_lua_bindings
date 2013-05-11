@@ -1,0 +1,1 @@
+"../tool/tolua++.exe" -tFileManager -o LuaFileManager.cpp FileManager.pkg

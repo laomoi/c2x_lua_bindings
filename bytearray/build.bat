@@ -1,0 +1,1 @@
+"../tool/tolua++.exe" -tCCByteArray -o LuaCCByteArray.cpp CCByteArray.pkg

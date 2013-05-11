@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCByteArray
-** Generated automatically by tolua++-1.0.92 on 05/10/13 12:45:39.
+** Generated automatically by tolua++-1.0.92 on 05/11/13 20:12:13.
 */
 
 #ifndef __cplusplus
