@@ -2,8 +2,7 @@
 #ifndef __CC_EXTRA_CCBYTEARRAY_H_
 #define __CC_EXTRA_CCBYTEARRAY_H_
 
-#define ENDIAN_LITTLE 1
-#define ENDIAN_BIG 0
+
 
 #include <string>
 
@@ -14,12 +13,14 @@ using namespace std;
 class CCByteArray
 {
 public:
-     static CCByteArray* create(char *buf, int len);
+     static CCByteArray* create(char *buf, int len, int endian);
 
 	 static void destroy(CCByteArray* ba) ;
 
 	 static int checkCPUEndian();
 
+	 static const int endianLittle = 1;
+	 static const int endianBig = 0;
 
 
 

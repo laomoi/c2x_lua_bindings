@@ -3,12 +3,12 @@
 
 int CCByteArray::globalCPUEndian = -1;
 
-CCByteArray* CCByteArray::create(char* buffer, int len) {
+CCByteArray* CCByteArray::create(char* buffer, int len, int endian) {
 	CCByteArray* ba = new CCByteArray();
 	ba->bytes = buffer;
 	ba->pos = 0;
 	ba->length = len;
-	ba->endian = ENDIAN_LITTLE; // default data endian
+	ba->endian = endian; 
 
 	if (globalCPUEndian == -1){
 		globalCPUEndian  =  CCByteArray::checkCPUEndian();
@@ -28,7 +28,7 @@ int CCByteArray::checkCPUEndian() {
             char b;         
     } c;             
 	c.a = 1;    
-    return  (c.b ==1 ? ENDIAN_LITTLE : ENDIAN_BIG);      
+    return  (c.b ==1 ? endianLittle : endianBig);      
 }
  
 int CCByteArray::getCPUEndian() {

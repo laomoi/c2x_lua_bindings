@@ -6,7 +6,7 @@ $using namespace std;
 class CCByteArray
 {
 
-     static CCByteArray* create(char *buf, int len);
+     static CCByteArray* create(char *buf, int len, int endian);
      static void destroy(CCByteArray* ba);
 	
 	 int readShort();

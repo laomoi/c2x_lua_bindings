@@ -1,5 +1,7 @@
 local str = "\002\139\02\03\0\0\255\255\255\255abcd"
-local ba = CCByteArray:create(str, #str)
+
+--create(str, len, endian),  bigEndian=0, littleEndian=1
+local ba = CCByteArray:create(str, #str, 0)
 
 echo(ba:getCPUEndian())
 echo(ba:getLength())

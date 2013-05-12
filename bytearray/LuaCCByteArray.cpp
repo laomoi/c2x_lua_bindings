@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCByteArray
-** Generated automatically by tolua++-1.0.92 on 05/11/13 20:12:13.
+** Generated automatically by tolua++-1.0.92 on 05/12/13 23:58:27.
 */
 
 #ifndef __cplusplus
@@ -37,7 +37,8 @@ static int tolua_CCByteArray_CCByteArray_create00(lua_State* tolua_S)
      !tolua_isusertable(tolua_S,1,"CCByteArray",0,&tolua_err) ||
      !tolua_isstring(tolua_S,2,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,4,&tolua_err)
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
  )
   goto tolua_lerror;
  else
@@ -45,8 +46,9 @@ static int tolua_CCByteArray_CCByteArray_create00(lua_State* tolua_S)
  {
   char* buf = ((char*)  tolua_tostring(tolua_S,2,0));
   int len = ((int)  tolua_tonumber(tolua_S,3,0));
+  int endian = ((int)  tolua_tonumber(tolua_S,4,0));
   {
-   CCByteArray* tolua_ret = (CCByteArray*)  CCByteArray::create(buf,len);
+   CCByteArray* tolua_ret = (CCByteArray*)  CCByteArray::create(buf,len,endian);
     tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCByteArray");
   }
  }
