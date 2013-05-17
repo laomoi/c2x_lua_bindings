@@ -127,11 +127,11 @@ int CCByteArray::readUnsignedByte() {
 
 string CCByteArray::readString(int len) {
 
-    char* value = new char[length + 1];
+    char* value = new char[len + 1];
     
-    value[length] = 0;
-    memcpy(value, this->bytes + this->pos, length);
-    this->pos += length;
+    value[len] = 0;
+    memcpy(value, this->bytes + this->pos, len);
+    this->pos += len;
     
     string str(value);
     delete [] value;
@@ -156,6 +156,8 @@ int CCByteArray::getLength() {
 }
 
 
-string CCByteArray::getBuffer() {
-    return this->bytes;
+int CCByteArray::getBytesAvailable() {
+	return this->length - this->pos;
 }
+
+

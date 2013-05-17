@@ -31,11 +31,11 @@ public:
 	 string readString(int len);
 	 int readByte();
 	 int readUnsignedByte();
-	 string getBuffer();
 	 int getLength();	 
 	 int getCPUEndian();
 	 int getPosition();
 	 void setPosition(int pos);
+	 int getBytesAvailable();
 	 //setEndian(int n)
 	
 private:

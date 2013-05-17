@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCByteArray
-** Generated automatically by tolua++-1.0.92 on 05/12/13 23:58:27.
+** Generated automatically by tolua++-1.0.92 on 05/17/13 23:28:16.
 */
 
 #ifndef __cplusplus
@@ -316,38 +316,6 @@ static int tolua_CCByteArray_CCByteArray_readUnsignedByte00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: getBuffer of class  CCByteArray */
-#ifndef TOLUA_DISABLE_tolua_CCByteArray_CCByteArray_getBuffer00
-static int tolua_CCByteArray_CCByteArray_getBuffer00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCByteArray",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCByteArray* self = (CCByteArray*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBuffer'", NULL);
-#endif
-  {
-   string tolua_ret = (string)  self->getBuffer();
-   tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getBuffer'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
 /* method: getLength of class  CCByteArray */
 #ifndef TOLUA_DISABLE_tolua_CCByteArray_CCByteArray_getLength00
 static int tolua_CCByteArray_CCByteArray_getLength00(lua_State* tolua_S)
@@ -477,6 +445,38 @@ static int tolua_CCByteArray_CCByteArray_setPosition00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getBytesAvailable of class  CCByteArray */
+#ifndef TOLUA_DISABLE_tolua_CCByteArray_CCByteArray_getBytesAvailable00
+static int tolua_CCByteArray_CCByteArray_getBytesAvailable00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"CCByteArray",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCByteArray* self = (CCByteArray*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBytesAvailable'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getBytesAvailable();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBytesAvailable'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_CCByteArray_open (lua_State* tolua_S)
 {
@@ -495,11 +495,11 @@ TOLUA_API int tolua_CCByteArray_open (lua_State* tolua_S)
    tolua_function(tolua_S,"readString",tolua_CCByteArray_CCByteArray_readString00);
    tolua_function(tolua_S,"readByte",tolua_CCByteArray_CCByteArray_readByte00);
    tolua_function(tolua_S,"readUnsignedByte",tolua_CCByteArray_CCByteArray_readUnsignedByte00);
-   tolua_function(tolua_S,"getBuffer",tolua_CCByteArray_CCByteArray_getBuffer00);
    tolua_function(tolua_S,"getLength",tolua_CCByteArray_CCByteArray_getLength00);
    tolua_function(tolua_S,"getCPUEndian",tolua_CCByteArray_CCByteArray_getCPUEndian00);
    tolua_function(tolua_S,"getPosition",tolua_CCByteArray_CCByteArray_getPosition00);
    tolua_function(tolua_S,"setPosition",tolua_CCByteArray_CCByteArray_setPosition00);
+   tolua_function(tolua_S,"getBytesAvailable",tolua_CCByteArray_CCByteArray_getBytesAvailable00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

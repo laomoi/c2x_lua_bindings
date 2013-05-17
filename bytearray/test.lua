@@ -14,8 +14,11 @@ echo(ba:readUnsignedInt())
 echo(ba:readString(4))
 
 ba:setPosition(0)
+echo( ba:getBytesAvailable() )
+
 echo("pos:" .. ba:getPosition())
 echo(ba:readByte())
 echo(ba:readUnsignedByte())
+
 
 CCByteArray:destroy(ba)
