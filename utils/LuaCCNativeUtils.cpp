@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCNativeUtils
-** Generated automatically by tolua++-1.0.92 on 05/26/13 15:41:38.
+** Generated automatically by tolua++-1.0.92 on 05/26/13 16:27:55.
 */
 
 #ifndef __cplusplus
@@ -13,7 +13,7 @@
 /* Exported function */
 TOLUA_API int  tolua_CCNativeUtils_open (lua_State* tolua_S);
 
-#include "utils\CCNativeUtils.h"
+#include "utils/CCNativeUtils.h"
 
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)

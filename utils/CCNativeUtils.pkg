@@ -1,4 +1,4 @@
-$#include "utils\CCNativeUtils.h"
+$#include "utils/CCNativeUtils.h"
 class CCNativeUtils
 {
      static unsigned int getCurrentTime();

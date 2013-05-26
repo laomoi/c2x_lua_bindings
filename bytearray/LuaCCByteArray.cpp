@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCByteArray
-** Generated automatically by tolua++-1.0.92 on 05/17/13 23:28:16.
+** Generated automatically by tolua++-1.0.92 on 05/26/13 16:27:43.
 */
 
 #ifndef __cplusplus
@@ -13,7 +13,7 @@
 /* Exported function */
 TOLUA_API int  tolua_CCByteArray_open (lua_State* tolua_S);
 
-#include "bytearray\CCByteArray.h"
+#include "bytearray/CCByteArray.h"
 #include <string>
 using namespace std;
 
