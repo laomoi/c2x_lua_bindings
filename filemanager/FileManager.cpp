@@ -17,6 +17,11 @@
 
 #include "filemanager/FileManager.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#include <io.h>
+
+#endif
+
 using namespace std;
 using namespace cocos2d;
 
